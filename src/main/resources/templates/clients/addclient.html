@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org">
+<html xmlns:th="http://www.thymleaf.org"
+ 	  xmlns:sec="https://www. thymeleaf.org/thymeleaf-extras-springsecurity5" 
+>
 		<head>
 		<meta charset="UTF-8" />
 		<title>Ajout Clients</title>
-				<link rel="stylesheet" type="text/css" th:href="@{../css/table-responsive.css}" />
-				<link rel="stylesheet" type="text/css" th:href="@{../css/style.css}" />
-				<link rel="stylesheet" type="text/css" th:href="@{../css/style-responsive.css}" />
-				<link rel="stylesheet" type="text/css" th:href="@{../css/to-do.css}" />
-				<link rel="stylesheet" type="text/css" th:href="@{../css/zabuto_calendar.css}" />
-				<link rel="stylesheet" type="text/css" th:href="@{../lib/bootstrap/css/bootstrap.min.css}" />
-				<link rel="stylesheet" type="text/css" th:href="@{../lib/font-awesome/css/font-awesome.css}" />
+				<link rel="stylesheet" type="text/css" th:href="@{../../css/table-responsive.css}" />
+				<link rel="stylesheet" type="text/css" th:href="@{../../css/style.css}" />
+				<link rel="stylesheet" type="text/css" th:href="@{../../css/style-responsive.css}" />
+				<link rel="stylesheet" type="text/css" th:href="@{../../css/to-do.css}" />
+				<link rel="stylesheet" type="text/css" th:href="@{../../css/zabuto_calendar.css}" />
+				<link rel="stylesheet" type="text/css" th:href="@{../../lib/bootstrap/css/bootstrap.min.css}" />
+				<link rel="stylesheet" type="text/css" th:href="@{../../lib/font-awesome/css/font-awesome.css}" />
 		
 		</head>			
 <body>
@@ -23,7 +25,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="accueil.jsp" class="logo"><b>SEN <span>FORAGE</span></b></a>
+      <a th:href="@{/user/index}" class="logo"><b>SEN <span>FORAGE</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -210,7 +212,7 @@
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           <li>
-            <a class="logout" href="login.html">Logout</a>
+            <a class="logout" th:href="@{/login?logout}">Logout</a>
           </li>
         </ul>
       </div>
@@ -224,12 +226,12 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="accueil.jsp">
-          <img th:src="@{../img/bathie.png}" class="img-circle" width="80"></a></p>
+          <p class="centered"><a th:href="@{/user/index}">
+          <img th:src="@{../../img/bathie.png}" class="img-circle" width="80"></a></p>
           <h5 class="centered">Responsable-Clients</h5>      
           <h5 class="centered">Samba DIAW</h5>
           <li class="mt">
-            <a class="active" href="accueil.jsp">
+            <a class="active" th:href="@{/user/index}">
               <i class="fa fa-dashboard"></i>
               <span>Gestion SEN FORAGE</span>
               </a>
@@ -240,7 +242,7 @@
               <span>Gestion Clients</span>
               </a>
             <ul class="sub">
-              <li><a th:href="@{addclient}">Nouveaux Clients</a></li>
+              <li><a th:href="@{/admin/Clients/addclient}">Nouveaux Clients</a></li>
               <li><a th:href="@{liste}">Liste Clients</a></li>
               
 
@@ -286,7 +288,7 @@
           <div class="col-lg-12">
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="POST" th:action="@{/Clients/addclient}">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" th:action="@{/admin/save}">
                   <div class="form-group ">
                     <label for="prenom" class="control-label col-lg-2">Prenom</label>
                     <div class="col-lg-10">
@@ -315,7 +317,7 @@
                    <div class="form-group ">
                     <label for="idV" class="control-label col-lg-2">Village-Id</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="idV" type="text" name="idV" />
+                      <input class="form-control " id="Villageid" type="text" name="Villageid" />
                     </div>
                   </div>
                   <div class="form-group">
@@ -364,12 +366,12 @@
 		
 		
 	<!-- js placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" th:src="@{../lib/jquery/jquery.min.js}"></script>
-	<script type="text/javascript" th:src="@{../lib/bootstrap/js/bootstrap.min.js}"></script>
-	<script type="text/javascript" th:src="@{../lib/jquery.dcjqaccordion.2.7.js}"></script>
-	<script type="text/javascript" th:src="@{../lib/jquery.scrollTo.min.js}"></script>
-	<script type="text/javascript" th:src="@{../lib/jquery.nicescroll.js}"></script>
-	<script type="text/javascript" th:src="@{../lib/common-scripts.js}"></script>
+	<script type="text/javascript" th:src="@{../../lib/jquery/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{../../lib/bootstrap/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{../../lib/jquery.dcjqaccordion.2.7.js}"></script>
+	<script type="text/javascript" th:src="@{../../lib/jquery.scrollTo.min.js}"></script>
+	<script type="text/javascript" th:src="@{../../lib/jquery.nicescroll.js}"></script>
+	<script type="text/javascript" th:src="@{../../lib/common-scripts.js}"></script>
 				
 </body>
 </html>

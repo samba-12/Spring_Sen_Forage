@@ -30,9 +30,8 @@ public class Responsables implements Serializable{
 	public Responsables() {
 		super();
 	}
-	public Responsables(int id, String prenom, String nom, String email, String password) {
+	public Responsables(String prenom, String nom, String email, String password) {
 		super();
-		this.id = id;
 		this.prenom = prenom;
 		this.nom = nom;
 		this.email = email;

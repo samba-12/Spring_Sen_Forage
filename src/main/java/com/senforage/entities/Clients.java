@@ -1,6 +1,8 @@
 package com.senforage.entities;
 
 import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,13 +32,15 @@ public class Clients implements Serializable{
 	@Column
 	private String telephone;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn (name="Villageid")
 	private Villages village = new Villages();
 
 	public Clients() {
 		super();
 	}
+	
+	
 	public Clients(int idClient, String prenom, String nom, String adresse, String telephone, Villages village) {
 		super();
 		this.idClient = idClient;
@@ -44,7 +48,10 @@ public class Clients implements Serializable{
 		this.nom = nom;
 		this.adresse = adresse;
 		this.telephone = telephone;
+		this.village = village;
 	}
+
+
 	public int getIdClient() {
 		return idClient;
 	}

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.senforage.entities.Clients;
 
 @Repository
-public interface IClients extends JpaRepository<Clients, Integer> {
+public interface IClients extends JpaRepository<Clients, Long> {
 
 }

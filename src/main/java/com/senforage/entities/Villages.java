@@ -2,6 +2,8 @@ package com.senforage.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,7 +31,7 @@ public class Villages implements Serializable {
 	private String nomVillage;
 
 	
-	@OneToMany(mappedBy="village", fetch =FetchType.LAZY,targetEntity=Clients.class)
+	@OneToMany(mappedBy="village", fetch =FetchType.LAZY,targetEntity=Clients.class, cascade=CascadeType.ALL)
 	private Collection<Clients>clients;
 
 	public Villages() {
